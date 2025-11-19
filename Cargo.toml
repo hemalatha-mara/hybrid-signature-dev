@@ -1,0 +1,21 @@
+[package]
+name = "pqc-rust-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.21"
+
+# Quantum-Resistant Cryptography
+pqcrypto-kyber = "0.8"
+pqcrypto-dilithium = "0.5"
+pqcrypto-traits = "0.3"
+pqcrypto-sphincsplus = "0.5"    # <-- NEW: SLH-DSA (SPHINCS+)
+pqcrypto-falcon = "0.3"      # ← NEW: Falcon instead of Dilithium
+secp256k1 = { version = "0.28", features = ["rand", "recovery"] }
+sha2 = "0.10"  # For hashing before ECDSA signing
+hex = "0.4"     # For hex encoding
+rand = "0.8"
